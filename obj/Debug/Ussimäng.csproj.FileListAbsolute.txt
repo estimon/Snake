@@ -1,0 +1,9 @@
+c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\bin\Debug\Ussimäng.exe.config
+c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\bin\Debug\Ussimäng.exe
+c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\bin\Debug\Ussimäng.pdb
+c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\obj\Debug\Ussimäng.csprojResolveAssemblyReference.cache
+c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\obj\Debug\Ussimäng.Form1.resources
+c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\obj\Debug\Ussimäng.Properties.Resources.resources
+c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\obj\Debug\Ussimäng.csproj.GenerateResource.Cache
+c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\obj\Debug\Ussimäng.exe
+c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\obj\Debug\Ussimäng.pdb
