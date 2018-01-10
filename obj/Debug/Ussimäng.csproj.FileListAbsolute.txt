@@ -16,3 +16,12 @@ C:\Users\opilane\Documents\GitHub\Snake\obj\Debug\Ussimäng.Properties.Resources
 C:\Users\opilane\Documents\GitHub\Snake\obj\Debug\Ussimäng.csproj.GenerateResource.Cache
 C:\Users\opilane\Documents\GitHub\Snake\obj\Debug\Ussimäng.exe
 C:\Users\opilane\Documents\GitHub\Snake\obj\Debug\Ussimäng.pdb
+C:\Users\opilane\Desktop\Snake-master\bin\Debug\Ussimäng.exe.config
+C:\Users\opilane\Desktop\Snake-master\bin\Debug\Ussimäng.exe
+C:\Users\opilane\Desktop\Snake-master\bin\Debug\Ussimäng.pdb
+C:\Users\opilane\Desktop\Snake-master\obj\Debug\Ussimäng.csprojResolveAssemblyReference.cache
+C:\Users\opilane\Desktop\Snake-master\obj\Debug\Ussimäng.Form1.resources
+C:\Users\opilane\Desktop\Snake-master\obj\Debug\Ussimäng.Properties.Resources.resources
+C:\Users\opilane\Desktop\Snake-master\obj\Debug\Ussimäng.csproj.GenerateResource.Cache
+C:\Users\opilane\Desktop\Snake-master\obj\Debug\Ussimäng.exe
+C:\Users\opilane\Desktop\Snake-master\obj\Debug\Ussimäng.pdb

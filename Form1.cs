@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -134,6 +135,14 @@ namespace Ussimäng
         {
             timer1.Enabled = false;
             MessageBox.Show("Mäng läbi! Sinu skoor oli: " + score );
+            System.IO.StreamReader sr = new System.IO.StreamReader("Skoor.txt");
+            if (Convert.ToInt32(sr.ReadLine()) < Convert.ToInt32(this.ussLable.Text))
+            {
+                sr.Close();
+                using (System.IO.StreamWriter sw = new StreamWriter("Skoor.txt", false))
+                    sw.WriteLine(this.ussLable.Text);
+            }
+
             ussLable.Text = "0";
             score = 0;
             tühikLable.Text = "Vajuta tühikut, et alsutada";
