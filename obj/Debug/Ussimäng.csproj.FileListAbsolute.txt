@@ -7,3 +7,12 @@ c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\obj\D
 c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\obj\Debug\Ussimäng.csproj.GenerateResource.Cache
 c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\obj\Debug\Ussimäng.exe
 c:\users\opilane\documents\visual studio 2017\Projects\Ussimäng\Ussimäng\obj\Debug\Ussimäng.pdb
+C:\Users\opilane\Documents\GitHub\Snake\bin\Debug\Ussimäng.exe.config
+C:\Users\opilane\Documents\GitHub\Snake\bin\Debug\Ussimäng.exe
+C:\Users\opilane\Documents\GitHub\Snake\bin\Debug\Ussimäng.pdb
+C:\Users\opilane\Documents\GitHub\Snake\obj\Debug\Ussimäng.csprojResolveAssemblyReference.cache
+C:\Users\opilane\Documents\GitHub\Snake\obj\Debug\Ussimäng.Form1.resources
+C:\Users\opilane\Documents\GitHub\Snake\obj\Debug\Ussimäng.Properties.Resources.resources
+C:\Users\opilane\Documents\GitHub\Snake\obj\Debug\Ussimäng.csproj.GenerateResource.Cache
+C:\Users\opilane\Documents\GitHub\Snake\obj\Debug\Ussimäng.exe
+C:\Users\opilane\Documents\GitHub\Snake\obj\Debug\Ussimäng.pdb

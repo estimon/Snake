@@ -105,8 +105,8 @@ namespace Ussimäng
                 }
             }
             pauk();
-
             this.Invalidate();
+            
         }
 
         public void pauk()
@@ -121,13 +121,13 @@ namespace Ussimäng
 
             }
 
-            if(snake.SnakeRec[0].X < 0 || snake.SnakeRec[0].X > 509)
+            if(snake.SnakeRec[0].X < 0 || snake.SnakeRec[0].X > 493)
             {
                 restart();
             }
-            if (snake.SnakeRec[0].X < 0 || snake.SnakeRec[0].Y > 553)
+            if (snake.SnakeRec[0].Y < 0 || snake.SnakeRec[0].Y > 490)
             {
-                restart();
+                restart();               
             }
         }
         public void restart()
@@ -138,6 +138,11 @@ namespace Ussimäng
             score = 0;
             tühikLable.Text = "Vajuta tühikut, et alsutada";
             snake = new Snake();
+            this.Invalidate();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }
