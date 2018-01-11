@@ -25,6 +25,7 @@ namespace Ussimäng
         bool down = false;
         bool up = false;
         int score = 0;
+
         public Form1()
         {
             player.SoundLocation = "sswav.wav";
@@ -140,11 +141,11 @@ namespace Ussimäng
             timer1.Enabled = false;
             MessageBox.Show("Mäng läbi! Sinu skoor oli: " + score );
             System.IO.StreamReader sr = new System.IO.StreamReader("Skoor.txt");
-            if (Convert.ToInt32(sr.ReadLine()) < Convert.ToInt32(this.ussLable.Text)) 
+            if (Convert.ToInt32(sr.ReadLine()) < Convert.ToInt32(ussLable.Text)) 
             {               
                 sr.Close();
                 using (System.IO.StreamWriter sw = new StreamWriter("Skoor.txt", false))
-                    sw.WriteLine(this.ussLable.Text);
+                    sw.WriteLine(ussLable.Text);
             }
             
             ussLable.Text = "0";
@@ -163,8 +164,8 @@ namespace Ussimäng
         private void highscoreToolStripMenuItem_Click(object sender, EventArgs e)
         {           
         }
-        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
 
+        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
         {
         }
 
