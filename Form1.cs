@@ -29,7 +29,7 @@ namespace Ussimäng
         public Form1()
         {
             player.SoundLocation = "sswav.wav";
-            player2.SoundLocation = "sna.wav";
+            player2.SoundLocation = "untitled.wav";
             player3.SoundLocation = "söömine.wav";
             InitializeComponent();
             food = new Söök(randFood);
