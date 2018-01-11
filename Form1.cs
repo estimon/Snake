@@ -39,7 +39,8 @@ namespace Ussimäng
         }
         public void algusmuusika()
         {
-            player.Play(); 
+            player.Play();
+            player.PlayLooping();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
