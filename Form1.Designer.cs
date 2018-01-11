@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -68,22 +69,26 @@
             // tühikLable
             // 
             this.tühikLable.AutoSize = true;
+            this.tühikLable.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tühikLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.tühikLable.Location = new System.Drawing.Point(90, 187);
             this.tühikLable.Name = "tühikLable";
-            this.tühikLable.Size = new System.Drawing.Size(349, 33);
+            this.tühikLable.Size = new System.Drawing.Size(349, 99);
             this.tühikLable.TabIndex = 1;
-            this.tühikLable.Text = "Vajuta tühikut, et alustada";
+            this.tühikLable.Text = "Vajuta tühikut, et alustada\r\n\r\nMängida saab nooltega\r\n";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(493, 514);
             this.Controls.Add(this.tühikLable);
             this.Controls.Add(this.statusStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = " ";
+            this.Text = "Snake";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);

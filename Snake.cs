@@ -21,7 +21,7 @@ namespace Ussimäng
         public Snake()
         {
             snakeRec = new Rectangle[3];
-            brush = new SolidBrush(Color.Black);
+            brush = new SolidBrush(Color.Green);
 
             x = 20;
             y = 0;

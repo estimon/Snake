@@ -25,3 +25,4 @@ C:\Users\opilane\Desktop\Snake-master\obj\Debug\Ussimäng.Properties.Resources.r
 C:\Users\opilane\Desktop\Snake-master\obj\Debug\Ussimäng.csproj.GenerateResource.Cache
 C:\Users\opilane\Desktop\Snake-master\obj\Debug\Ussimäng.exe
 C:\Users\opilane\Desktop\Snake-master\obj\Debug\Ussimäng.pdb
+C:\Users\opilane\Documents\GitHub\Snake\obj\Debug\Ussimäng.about.resources
