@@ -16,8 +16,8 @@ namespace Ussimäng
 
         public Söök(Random randFood)
         {
-            x = randFood.Next(0, 29) * 10;
-            y = randFood.Next(0, 29) * 10;
+            x = randFood.Next(0, 40) * 10;
+            y = randFood.Next(0, 40) * 10;
             brush = new SolidBrush(Color.Red);
             laius = 10;
             pikkus = 10;
@@ -26,8 +26,8 @@ namespace Ussimäng
 
         public void foodLocation(Random randFood)
         {
-            x = randFood.Next(0, 29) * 10;
-            y = randFood.Next(0, 29) * 10;
+            x = randFood.Next(0, 40) * 10;
+            y = randFood.Next(0, 40) * 10;
         }
 
         public void drawFood(Graphics paper)
