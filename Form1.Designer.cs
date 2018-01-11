@@ -71,7 +71,7 @@
             this.tühikLable.AutoSize = true;
             this.tühikLable.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tühikLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.tühikLable.Location = new System.Drawing.Point(90, 187);
+            this.tühikLable.Location = new System.Drawing.Point(74, 186);
             this.tühikLable.Name = "tühikLable";
             this.tühikLable.Size = new System.Drawing.Size(349, 99);
             this.tühikLable.TabIndex = 1;
@@ -81,6 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(493, 514);
             this.Controls.Add(this.tühikLable);

@@ -18,12 +18,9 @@ namespace Ussimäng
         {
             x = randFood.Next(0, 29) * 10;
             y = randFood.Next(0, 29) * 10;
-
             brush = new SolidBrush(Color.Red);
-
             laius = 10;
             pikkus = 10;
-
             foodRec = new Rectangle(x, y, laius, pikkus);
         }
 
@@ -37,7 +34,6 @@ namespace Ussimäng
         {
             foodRec.X = x;
             foodRec.Y = y;
-
             paper.FillRectangle(brush, foodRec);
         }
     }
