@@ -7,34 +7,35 @@ using System.Threading.Tasks;
 
 namespace Ussimäng
 {
-    public class Söök
+    public class Food
     {
-        private int x, y, laius, pikkus;
+        private int x, y, width, height;
         private SolidBrush brush;
-        public Rectangle foodRec;
+        public Rectangle foodruut;
+        
 
-
-        public Söök(Random randFood)
+        public Food(Random randFood)
         {
-            x = randFood.Next(0, 40) * 10;
-            y = randFood.Next(0, 40) * 10;
+            
             brush = new SolidBrush(Color.Red);
-            laius = 10;
-            pikkus = 10;
-            foodRec = new Rectangle(x, y, laius, pikkus);
+            width = 10;
+            height = 10;
+            x = randFood.Next(0, 42) * 10;
+            y = randFood.Next(0, 41) * 10;
+            foodruut = new Rectangle(x, y, width, height);
         }
 
-        public void foodLocation(Random randFood)
+        public void FoodLocation(Random randFood)
         {
-            x = randFood.Next(0, 40) * 10;
-            y = randFood.Next(0, 40) * 10;
+            x = randFood.Next(0, 42) * 10;
+            y = randFood.Next(0, 41) * 10;
         }
 
-        public void drawFood(Graphics paper)
+        public void Drawfood(Graphics paper)
         {
-            foodRec.X = x;
-            foodRec.Y = y;
-            paper.FillRectangle(brush, foodRec);
+            foodruut.X = x;
+            foodruut.Y = y;
+            paper.FillRectangle(brush, foodruut);
         }
     }
 }

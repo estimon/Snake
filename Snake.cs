@@ -11,30 +11,36 @@ namespace Ussimäng
     {
         private Rectangle[] snakeRec;
         private SolidBrush brush;
-        private int x, y, laius, pikkus;
+        private int x, y, width, lenght;
 
         public Rectangle[] SnakeRec
         {
             get { return snakeRec; }
         }
 
-        public Snake()
+        public Snake(Random randSnake)
         {
             snakeRec = new Rectangle[3];
             brush = new SolidBrush(Color.Black);
-            x = 20;
-            y = 0;
-            laius = 10;
-            pikkus = 10;
+            x = randSnake.Next(0, 40) * 10;
+            y = randSnake.Next(0, 40) * 10;
+            width = 10;
+            lenght = 10;
 
             for (int i = 0; i < snakeRec.Length; i++)
             {
-                snakeRec[i] = new Rectangle(x, y, laius, pikkus);
+                snakeRec[i] = new Rectangle(x, y, width, lenght);
                 x -= 10;
             }
         }
 
-        public void drawSnake(Graphics paper)
+        public void Snakelocation(Random randSnake)
+        {
+            x = randSnake.Next(0, 40) * 10;
+            y = randSnake.Next(0, 40) * 10;
+        }
+
+        public void DrawSnakeColor(Graphics paper)
         {
             foreach (Rectangle rec in snakeRec)
             {
@@ -42,7 +48,7 @@ namespace Ussimäng
             }
         }
 
-        public void drawSnake()
+        public void DrawSnakemoving()
         {
             for (int i = snakeRec.Length - 1; i > 0; i--)
             {
@@ -50,36 +56,36 @@ namespace Ussimäng
             }
         }
 
-        public void moveDown()
+        public void MoveDown()
         {
-            drawSnake();
+            DrawSnakemoving();
             snakeRec[0].Y += 10;
         }
 
-        public void moveUp()
+        public void MoveUp()
         {
-            drawSnake();
+            DrawSnakemoving();
             snakeRec[0].Y -= 10;
         }
 
-        public void moveRight()
+        public void MoveRight()
         {
-            drawSnake();
+            DrawSnakemoving();
             snakeRec[0].X += 10;
         }
 
-        public void moveLeft()
+        public void MoveLeft()
         {
-            drawSnake();
+            DrawSnakemoving();
             snakeRec[0].X -= 10;
         }
 
 
-        public void pikkenda()
+        public void Grow()
         {
-            List<Rectangle> rec = snakeRec.ToList();
-            rec.Add(new Rectangle(snakeRec[snakeRec.Length - 1].X, snakeRec[snakeRec.Length - 1].Y, laius, pikkus));
-            snakeRec = rec.ToArray();
+            List<Rectangle> Rec = snakeRec.ToList();
+            Rec.Add(new Rectangle(snakeRec[snakeRec.Length - 1].X, snakeRec[snakeRec.Length - 1].Y, width, lenght));
+            snakeRec = Rec.ToArray();
         }
 
     }

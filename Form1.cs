@@ -13,31 +13,41 @@ namespace Ussimäng
 {
     public partial class Form1 : Form
     {
+        public void StartGame()
+        {
+            food = new Food(randFood);
+            snake = new Snake(randSnake);
+
+        }
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
         System.Media.SoundPlayer player2 = new System.Media.SoundPlayer();
         System.Media.SoundPlayer player3 = new System.Media.SoundPlayer();
         Random randFood = new Random();
-        Graphics paper;
-        Snake snake = new Snake();
-        Söök food;
+        Random randSnake = new Random();
+        Snake snake;
+        Graphics paper;  
+        Food food;
+        
         bool left = false;
         bool right = false;
         bool down = false;
         bool up = false;
         int score = 0;
+        
 
         public Form1()
         {
             player.SoundLocation = "sswav.wav";
             player2.SoundLocation = "untitled.wav";
-            player3.SoundLocation = "söömine.wav";
             InitializeComponent();
-            food = new Söök(randFood);
+            food = new Food(randFood);
+            snake = new Snake(randSnake);
+            
             {
-                algusmuusika();
+                Backroundmusic();
             }
         }
-        public void algusmuusika()
+        public void Backroundmusic()
         {
             player.Play();
             player.PlayLooping();
@@ -45,9 +55,10 @@ namespace Ussimäng
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            snake.Snakelocation(randSnake);
             paper = e.Graphics;
-            food.drawFood(paper);
-            snake.drawSnake(paper);
+            food.Drawfood(paper);
+            snake.DrawSnakeColor(paper);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -93,88 +104,99 @@ namespace Ussimäng
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
+            
             ussLable.Text = Convert.ToString(score);
-            if (down) { snake.moveDown(); }
-            if (up) { snake.moveUp(); }
-            if (right) { snake.moveRight(); }
-            if (left) { snake.moveLeft(); }
+            if (down) { snake.MoveDown(); }
+            if (up) { snake.MoveUp(); }
+            if (right) { snake.MoveRight(); }
+            if (left) { snake.MoveLeft(); }
             for (int i = 0; i < snake.SnakeRec.Length; i++)
             {
-                if (snake.SnakeRec[i].IntersectsWith(food.foodRec))
+                if (snake.SnakeRec[i].IntersectsWith(food.foodruut))
                 {
                     score += 10;
-                    snake.pikkenda();
-                    food.foodLocation(randFood);
+                    snake.Grow();
+                    food.FoodLocation(randFood);
                 }
             }
-            pauk();            
+            Death();            
             Invalidate();   
         }
 
-        public void pauk()
-        {        
-            for (int i = 1; i < snake.SnakeRec.Length; i++)
-            {                
-                if (snake.SnakeRec[0].IntersectsWith(snake.SnakeRec[i]))
-                {
-                    food.foodLocation(randFood);
-                    restart();
-                }
+        public void Death()
+        {
+            
+            using (StreamReader sr = new StreamReader("Skoor.txt"))
+                Highscore.Text = sr.ReadLine();
+            if (Convert.ToInt32(File.ReadAllText("Skoor.txt")) < Convert.ToInt32(score))
+            {
+                StreamWriter scorefile = new StreamWriter("Skoor.txt");
+                scorefile.Write(score);
+                scorefile.Close();
+                scorefile.Dispose();
+                using (StreamReader sr = new StreamReader("Skoor.txt"))
+                    Highscore.Text = sr.ReadLine();
             }
 
-            if(snake.SnakeRec[0].X < 0 || snake.SnakeRec[0].X > 493)
+
+            snake.Snakelocation(randSnake);
+            for (int i = 1; i < snake.SnakeRec.Length; i++)
+                {
+                    if (snake.SnakeRec[0].IntersectsWith(snake.SnakeRec[i]))
+                    {
+                    
+                    food.FoodLocation(randFood);
+                    Restart();
+                    }
+                }
+
+
+            if(snake.SnakeRec[0].X < 0 || snake.SnakeRec[0].X > 490)
             {
-                food.foodLocation(randFood);
-                restart();
+                
+                food.FoodLocation(randFood);
+                
+                Restart();
             }
-            if (snake.SnakeRec[0].Y < 0 || snake.SnakeRec[0].Y > 490)
+            if (snake.SnakeRec[0].Y < 0 || snake.SnakeRec[0].Y > 495)
             {
-                food.foodLocation(randFood);
-                restart();               
+                
+                food.FoodLocation(randFood);
+                Restart();               
             }
         }
 
-        public void restart()
+        public void Restart()
         {
+            
             player2.Play();           
             timer1.Enabled = false;
-            MessageBox.Show("Mäng läbi! Sinu skoor oli: " + score );
-            System.IO.StreamReader sr = new System.IO.StreamReader("Skoor.txt");
-            if (Convert.ToInt32(sr.ReadLine()) < Convert.ToInt32(ussLable.Text)) 
-            {               
-                sr.Close();
-                using (System.IO.StreamWriter sw = new StreamWriter("Skoor.txt", false))
-                    sw.WriteLine(ussLable.Text);
-            }
+            MessageBox.Show("GAME OVER! Your score was: " + score );
             ussLable.Text = "0";
             score = 0;
-            tühikLable.Text = "Vajuta tühikut, et alsutada";
+            tühikLable.Text = "Press SPACE to continue!";
             {
-                algusmuusika();
+                Backroundmusic();
             }
-            snake = new Snake();
+            {
+                StartGame();
+            }
             Invalidate();
+            
         }
         private void Form1_Load(object sender, EventArgs e)
         {
         }
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
 
-        private void highscoreToolStripMenuItem_Click(object sender, EventArgs e)
-        {           
         }
 
         private void toolStripStatusLabel2_Click(object sender, EventArgs e)
         {
-        }
 
-        private void toolStripStatusLabel3_EnabledChanged(object sender, EventArgs e)
-        {          
-        }
-
-        private void Highscore_Click(object sender, EventArgs e)
-        {
         }
     }
 }
