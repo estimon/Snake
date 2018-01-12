@@ -74,6 +74,7 @@ namespace Ussimäng
             snakeRec[0].X -= 10;
         }
 
+
         public void pikkenda()
         {
             List<Rectangle> rec = snakeRec.ToList();

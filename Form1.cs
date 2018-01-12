@@ -53,7 +53,7 @@ namespace Ussimäng
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             
-            if(e.KeyData == Keys.Space)
+            if(e.KeyData == Keys.Space && right == false)
             {
                 timer1.Enabled = true;
                 tühikLable.Text = "";
@@ -61,7 +61,7 @@ namespace Ussimäng
                 up = false;
                 right = false;
                 left = false;
-            }        
+            }
 
             if (e.KeyData == Keys.Down && up == false)
             {
@@ -94,7 +94,7 @@ namespace Ussimäng
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {           
+        {
             ussLable.Text = Convert.ToString(score);
             if (down) { snake.moveDown(); }
             if (up) { snake.moveUp(); }
@@ -148,7 +148,6 @@ namespace Ussimäng
                 using (System.IO.StreamWriter sw = new StreamWriter("Skoor.txt", false))
                     sw.WriteLine(ussLable.Text);
             }
-            
             ussLable.Text = "0";
             score = 0;
             tühikLable.Text = "Vajuta tühikut, et alsutada";
